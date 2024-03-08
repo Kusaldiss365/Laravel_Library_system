@@ -16,7 +16,7 @@ class BookController extends Controller
                 return response()->json(['error' => "No Books Found !"], 404);
             }
 
-            return response()->json(['books' => $books], 200);
+            return response()->json($books, 200);
         } catch (\Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);
         }
